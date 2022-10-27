@@ -173,10 +173,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -216,10 +224,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -262,10 +278,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -311,10 +335,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -363,10 +395,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -418,10 +458,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -476,10 +524,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -537,10 +593,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -601,10 +665,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -668,10 +740,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -738,10 +818,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -811,10 +899,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -887,10 +983,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -966,10 +1070,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1048,10 +1160,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1133,10 +1253,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1221,10 +1349,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1312,10 +1448,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1406,10 +1550,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1503,10 +1655,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1603,10 +1763,18 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                } \
             } \
             else{ \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1645,15 +1813,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1699,15 +1877,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1756,15 +1944,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1816,15 +2014,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1879,15 +2087,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -1945,15 +2163,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2014,15 +2242,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2086,15 +2324,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2161,15 +2409,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2239,15 +2497,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2320,15 +2588,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2404,15 +2682,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2491,15 +2779,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2581,15 +2879,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2674,15 +2982,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2770,15 +3088,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2869,15 +3197,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -2971,15 +3309,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -3076,15 +3424,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -3184,15 +3542,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -3295,15 +3663,25 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                } \
             } \
             else{ \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19); \
+                } \
             } \
         } \
         if (FUNCNAME##_fake.custom_fake != NULL){  \
@@ -3347,16 +3725,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg0); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg0); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg0); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg0); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3402,16 +3788,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg1); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg1); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg1); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg1); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3460,16 +3854,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg2); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg2); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg2); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg2); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3521,16 +3923,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg3); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg3); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg3); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg3); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3585,16 +3995,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg4); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg4); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg4); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg4); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3652,16 +4070,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg5); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg5); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg5); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg5); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3722,16 +4148,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg6); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg6); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg6); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg6); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3795,16 +4229,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg7); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg7); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg7); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg7); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3871,16 +4313,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg8); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg8); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg8); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg8); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -3950,16 +4400,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg9); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg9); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg9); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg9); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4032,16 +4490,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg10); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg10); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg10); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg10); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4117,16 +4583,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg11); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg11); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg11); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg11); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4205,16 +4679,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg12); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg12); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg12); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg12); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4296,16 +4778,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg13); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg13); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg13); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg13); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4390,16 +4880,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg14); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg14); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg14); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg14); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4487,16 +4985,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg15); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg15); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg15); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg15); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4587,16 +5093,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg16); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg16); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg16); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg16); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4690,16 +5204,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg17); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg17); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg17); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg17); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4796,16 +5318,24 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg18); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg18); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
+                    va_end(ap); \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg18); \
-                FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
-                va_end(ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg18); \
+                    FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
+                    va_end(ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4850,21 +5380,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg0); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg0); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg0); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg0); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4916,21 +5456,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg1); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg1); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg1); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg1); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -4985,21 +5535,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg2); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg2); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg2); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg2); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5057,21 +5617,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg3); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg3); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg3); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg3); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5132,21 +5702,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg4); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg4); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg4); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg4); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5210,21 +5790,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg5); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg5); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg5); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg5); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5291,21 +5881,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg6); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg6); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg6); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg6); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5375,21 +5975,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg7); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg7); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg7); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg7); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5462,21 +6072,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg8); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg8); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg8); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg8); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5552,21 +6172,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg9); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg9); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg9); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg9); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5645,21 +6275,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg10); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg10); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg10); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg10); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5741,21 +6381,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg11); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg11); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg11); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg11); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5840,21 +6490,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg12); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg12); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg12); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg12); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -5942,21 +6602,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg13); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg13); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg13); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg13); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -6047,21 +6717,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg14); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg14); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg14); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg14); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -6155,21 +6835,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg15); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg15); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg15); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg15); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -6266,21 +6956,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg16); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg16); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg16); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg16); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -6380,21 +7080,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg17); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg17); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg17); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg17); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \
@@ -6497,21 +7207,31 @@ FFF_END_EXTERN_C
         REGISTER_CALL(FUNCNAME); \
         if (FUNCNAME##_fake.custom_fake_seq_len){ /* a sequence of custom fakes */ \
             if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){ \
-                va_list ap; \
-                va_start(ap, arg18); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg18); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                } \
             } \
             else{ \
-                va_list ap; \
-                va_start(ap, arg18); \
-                RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
-                SAVE_RET_HISTORY(FUNCNAME, ret); \
-                va_end(ap); \
-                return ret; \
-                return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
+                if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){ \
+                    RETURN_FAKE_RESULT(FUNCNAME) \
+                } \
+                else{ \
+                    va_list ap; \
+                    va_start(ap, arg18); \
+                    RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
+                    SAVE_RET_HISTORY(FUNCNAME, ret); \
+                    va_end(ap); \
+                    return ret; \
+                    return FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, ap); \
+                } \
             } \
         } \
         if(FUNCNAME##_fake.custom_fake){ \

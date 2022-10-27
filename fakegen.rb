@@ -4,7 +4,7 @@
 
 
 $cpp_output = true
-$MAX_ARGS = 20
+$MAX_ARGS = 20 #20 
 $DEFAULT_ARG_HISTORY = 50
 $MAX_CALL_HISTORY = 50
 
@@ -438,30 +438,56 @@ def output_function_body(arg_count, has_varargs, is_value_function)
     indent {
       putd_backslash "if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){"
       indent {
-      putd_backslash "va_list ap;"
-      putd_backslash "va_start(ap, arg#{arg_count-1});"
-      putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](#{arg_list(arg_count)}, ap);" unless not is_value_function
-      putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
-      putd_backslash "va_end(ap);"  unless not is_value_function
-      putd_backslash "return ret;" unless not is_value_function
-      putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](#{arg_list(arg_count)}, ap);" unless is_value_function
-      putd_backslash "va_end(ap);" unless is_value_function
+
+        putd_backslash "if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){"
+        indent {
+          putd_backslash "RETURN_FAKE_RESULT(FUNCNAME)" unless not is_value_function
+
+        }
+        putd_backslash "}"
+        putd_backslash "else{"
+        indent {
+          putd_backslash "va_list ap;"
+          putd_backslash "va_start(ap, arg#{arg_count-1});"
+          putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](#{arg_list(arg_count)}, ap);" unless not is_value_function
+          putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
+          putd_backslash "va_end(ap);"  unless not is_value_function
+          putd_backslash "return ret;" unless not is_value_function
+          putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](#{arg_list(arg_count)}, ap);" unless is_value_function
+          putd_backslash "va_end(ap);" unless is_value_function
+        }
+        putd_backslash "}"
+
       }
       putd_backslash "}"
       putd_backslash "else{"
       indent {
-      putd_backslash "va_list ap;"
-      putd_backslash "va_start(ap, arg#{arg_count-1});"
-      putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)}, ap);" unless not is_value_function
-      putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
-      putd_backslash "va_end(ap);"  unless not is_value_function
-      putd_backslash "return ret;" unless not is_value_function
-      putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)}, ap);"
-      putd_backslash "va_end(ap);" unless is_value_function
+
+        putd_backslash "if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){"
+        indent {
+          putd_backslash "RETURN_FAKE_RESULT(FUNCNAME)" unless not is_value_function
+        }
+        putd_backslash "}"
+        putd_backslash "else{"
+        indent {
+          putd_backslash "va_list ap;"
+          putd_backslash "va_start(ap, arg#{arg_count-1});"
+          putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)}, ap);" unless not is_value_function
+          putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
+          putd_backslash "va_end(ap);"  unless not is_value_function
+          putd_backslash "return ret;" unless not is_value_function
+          putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)}, ap);"
+          putd_backslash "va_end(ap);" unless is_value_function
+        }
+        putd_backslash "}"
+
+
+
       }
       putd_backslash "}"
     }
     putd_backslash "}"
+
     putd_backslash "if(FUNCNAME##_fake.custom_fake){"
     indent {
       putd_backslash "RETURN_TYPE ret;" if is_value_function
@@ -486,18 +512,44 @@ def output_function_body(arg_count, has_varargs, is_value_function)
     indent {
       putd_backslash "if (FUNCNAME##_fake.custom_fake_seq_idx < FUNCNAME##_fake.custom_fake_seq_len){"
       indent {
-        putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](#{arg_list(arg_count)});" unless not is_value_function
-        putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
-        putd_backslash "return ret;" unless not is_value_function
-        putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++](#{arg_list(arg_count)});" unless is_value_function
+        
+
+        putd_backslash "if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx++] == NULL){"
+        indent {
+          putd_backslash "RETURN_FAKE_RESULT(FUNCNAME)" unless not is_value_function
+        }
+        putd_backslash "}"
+        putd_backslash "else{"
+        indent {
+          putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](#{arg_list(arg_count)});" unless not is_value_function
+          putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
+          putd_backslash "return ret;" unless not is_value_function
+          putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1](#{arg_list(arg_count)});" unless is_value_function
+        }
+        putd_backslash "}"
+
+
       }
       putd_backslash "}"
       putd_backslash "else{"
       indent {
-        putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)});" unless not is_value_function
-        putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
-        putd_backslash "return ret;" unless not is_value_function
-        putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)});"
+
+
+        putd_backslash "if (FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_idx-1] == NULL){"
+        indent {
+          putd_backslash "RETURN_FAKE_RESULT(FUNCNAME)" unless not is_value_function
+        }
+        putd_backslash "}"
+        putd_backslash "else{"
+        indent {
+          putd_backslash "RETURN_TYPE ret = FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)});" unless not is_value_function
+          putd_backslash "SAVE_RET_HISTORY(FUNCNAME, ret);" unless not is_value_function
+          putd_backslash "return ret;" unless not is_value_function
+          putd_backslash "#{return_type}FUNCNAME##_fake.custom_fake_seq[FUNCNAME##_fake.custom_fake_seq_len-1](#{arg_list(arg_count)});"
+        }
+        putd_backslash "}"
+
+
       }
       putd_backslash "}"
     }
